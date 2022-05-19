@@ -1,0 +1,27 @@
+
+List of FDs
+PatNo → PatAge, PatZip
+PatZip → PatCity
+VisitNo → PatNo, VisitDate
+ProvNo→ ProvSpecialty, ProvEmail
+ProvNo, VisitNo → Diagnosis
+
+
+
+
+
+BCNF tables:
+PationTable1 ( ​PatNo​, PatAge, ​PatZip ​)
+		FOREIGN KEY ( ​PatZip ​) REFERENCES ​PationTable1­-1
+		
+PationTable1­-1 ​( ​PatZip​, PatCity)
+
+
+PationTable2 ( ​VisitNo​, ​PatNo ​,VisitDate)FOREIGN KEY ( ​PatNo ​) REFERENCES ​PationTable1
+
+
+PationTable3 ( ​ProvNo​, ProvEmail, ProvSpecialty)UNIQUE(ProvEmail)
+
+PationTable4 ( ​ProvNo ​, ​VisitNo , ​ ​Diagnosis)
+	FOREIGN KEY ( ​ProvNo ​) REFERENCES ​PationTable3
+	FOREIGN KEY ( ​VisitNo ) ​ REFERENCES ​PationTable2

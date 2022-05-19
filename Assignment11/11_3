@@ -1,0 +1,7 @@
+Student​ ( ​StdNo​, StdName, StdEmail, StdAddress, StdCity, StdState, StdZip )
+UNIQUE(StdEmail)
+
+Institution ​( ​InstNo​, InstName, InstMascot)UNIQUE(InstName)
+
+
+Lender ​( ​LenderNo​, LenderName)UNIQUE(LenderName)
